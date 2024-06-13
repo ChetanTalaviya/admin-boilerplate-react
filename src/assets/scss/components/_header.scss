@@ -1,0 +1,236 @@
+.header {
+  padding: 11px 12px 11px 16px;
+  // border-bottom: 1px solid #f2f4f7;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: padding 0.3s ease-in-out;
+
+  .logo {
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+
+    img {
+      &.logoIcon {
+        width: 80px;
+        height: auto;
+      }
+
+      &.textLogo {
+        width: 150px;
+        height: auto;
+        margin: 8px 0;
+      }
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 600;
+      padding-top: 15px;
+      letter-spacing: 2px;
+      color: var(--white-color);
+      font-family: 'Caveat', cursive;
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 5px;
+
+    .dropdown {
+      .dropdown-menu.up-arrow {
+        margin-top: 5px;
+      }
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      font-size: $fs-18;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0;
+      background-color: unset;
+      border-radius: 4px;
+      // width: 50px;
+      height: 35px;
+      text-transform: capitalize;
+      color: var(--white-color);
+      display: flex;
+      justify-content: space-between;
+      place-items: center;
+      border: unset !important;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--text-hover);
+        border-radius: 99px;
+      }
+
+      .svg-content {
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--text-hover);
+        border-radius: 99px;
+        padding: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      &:hover {
+        box-shadow: unset !important;
+        border-color: unset;
+        background-color: unset;
+        color: var(--white-color) !important;
+      }
+
+      // &.user-btn {
+      //   // margin-right: 11px;
+      // }
+    }
+
+    .user-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--white-color);
+      letter-spacing: 0.2px;
+      transform: translateY(1px);
+
+      .superadmin-label {
+        font-size: 11px;
+        color: #2860bb;
+        background-color: #ccedfb;
+        border-radius: 10px;
+        padding: 3px 6px;
+        text-transform: lowercase;
+        font-weight: 600;
+        position: relative;
+        top: -2px;
+
+        svg {
+          position: relative;
+          top: 0px;
+        }
+      }
+
+      .admin-label {
+        font-size: 11px;
+        color: #12A150;
+        background-color: #dbfeeb;
+        border-radius: 10px;
+        padding: 3px 6px;
+        text-transform: lowercase;
+        font-weight: 600;
+        position: relative;
+        top: -2px;
+
+        svg {
+          position: relative;
+          top: 0px;
+        }
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    &:hover {
+      border-color: var(--primary-color);
+
+      .img svg path {
+        fill: var(--white-color);
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+
+    .img svg path {
+      fill: var(--white-color);
+    }
+  }
+
+  @include media-max(md) {
+    padding: 8px 12px;
+  }
+}
+
+body.dark {
+  .header {
+    background-color: var(--theme-color);
+
+    &-right {
+      .btn {
+        color: var(--text-color);
+
+        &:hover {
+          color: var(--text-color) !important;
+        }
+      }
+
+      .user-name {
+        color: var(--text-color);
+      }
+    }
+
+    .header-right .btn:hover {
+      box-shadow: unset !important;
+      border-color: unset;
+      background-color: unset;
+      color: var(--white-color) !important;
+    }
+
+    .dropdown-toggle {
+      &:hover {
+        .img svg path {
+          fill: var(--text-color);
+        }
+      }
+
+      .img svg path {
+        fill: var(--text-color);
+      }
+    }
+  }
+}
+
+// -------- dark and light toggle button ---------
+
+.header {
+  .header-right {
+    .theme-setting {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      align-items: end;
+      font-size: 14px;
+      padding: 13px 20px;
+      padding-top: 5px !important;
+      color: var(--text-color);
+    }
+  }
+}
+
+// @media screen and (max-width: 500px) {
+//   .header {
+//     .logo {
+//       img {
+//         &.textLogo {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
